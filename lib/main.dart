@@ -1,6 +1,7 @@
 import 'package:bloc_app/Bloc/TaskList/task_bloc.dart';
 import 'package:bloc_app/Bloc/counter/counter_bloc.dart';
 import 'package:bloc_app/Bloc/image_picker/image_picker_bloc.dart';
+import 'package:bloc_app/Bloc/post_comment/post_bloc.dart';
 import 'package:bloc_app/Bloc/switch/switch_%20bloc.dart';
 import 'package:bloc_app/Utils/image_picker_utils.dart';
 import 'package:bloc_app/ui/counter.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CounterBloc()),
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
-        BlocProvider(create: (_) => TaskBloc())
+        BlocProvider(create: (_) => TaskBloc()),
+        BlocProvider(create: (_) => PostBloc())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
