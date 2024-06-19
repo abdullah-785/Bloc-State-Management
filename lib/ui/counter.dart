@@ -2,6 +2,7 @@ import 'package:bloc_app/Bloc/counter/counter_bloc.dart';
 import 'package:bloc_app/Bloc/counter/counter_event.dart';
 import 'package:bloc_app/Bloc/counter/counter_states.dart';
 import 'package:bloc_app/ui/image_picker_ui.dart';
+import 'package:bloc_app/ui/post_comment.dart';
 import 'package:bloc_app/ui/switch_ui.dart';
 import 'package:bloc_app/ui/task_list_ui.dart';
 import 'package:flutter/material.dart';
@@ -84,6 +85,15 @@ class _CounterState extends State<Counter> {
                     MaterialPageRoute(builder: (context) => TaskList()));
               },
               child: Text("Task")),
+
+          // PostCommentUi
+
+          GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PostCommentUi()));
+              },
+              child: Text("Post Comments")),
         ],
       ),
     );
