@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bloc_app/Model/comment_post_model.dart';
+import 'package:bloc_app/bloc_model/comment_post_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 // import 'package:http/http.dart';
@@ -24,7 +24,7 @@ class PostRepositery {
         }).toList();
       }
     } catch (e) {
-      print(e);
+      // print(e);
       return throw Exception(e);
     }
 

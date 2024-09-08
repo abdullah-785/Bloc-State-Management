@@ -5,6 +5,7 @@ import 'package:bloc_app/Bloc/post_comment/post_bloc.dart';
 import 'package:bloc_app/Bloc/switch/switch_%20bloc.dart';
 import 'package:bloc_app/Utils/image_picker_utils.dart';
 import 'package:bloc_app/ui/counter.dart';
+import 'package:bloc_app/ui/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => CounterBloc()),
+        // BlocProvider(create: (_) => CounterBloc()),
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => ImagePickerBloc(ImagePickerUtils())),
         BlocProvider(create: (_) => TaskBloc()),
@@ -27,11 +28,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         darkTheme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
-        // theme: ThemeData(
-        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        //   useMaterial3: true,
-        // ),
-        home: Counter(),
+        home: SignIn(),
       ),
     );
   }

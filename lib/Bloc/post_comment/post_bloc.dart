@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:bloc_app/Bloc/post_comment/post_events.dart';
 import 'package:bloc_app/Bloc/post_comment/post_states.dart';
-import 'package:bloc_app/Model/comment_post_model.dart';
+import 'package:bloc_app/bloc_model/comment_post_model.dart';
 import 'package:bloc_app/Repository/post_repositery.dart';
 import 'package:bloc_app/Utils/status.dart';
 

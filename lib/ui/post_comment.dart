@@ -46,39 +46,37 @@ class _PostCommentUiState extends State<PostCommentUi> {
                 return Center(child: CircularProgressIndicator());
               case PostStatus.success:
                 return Expanded(
-                  child: Expanded(
-                    child: ListView.builder(
-                        itemCount: state.temPostList.isEmpty
-                            ? state.postList.length
-                            : state.temPostList.length,
-                        itemBuilder: (context, index) {
-                          if (state.temPostList.isNotEmpty) {
-                            final item = state.temPostList[index];
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(
-                                  item.name.toString(),
-                                ),
-                                subtitle: Text(item.body.toString()),
-                                leading: Text(item.postId.toString()),
+                  child: ListView.builder(
+                      itemCount: state.temPostList.isEmpty
+                          ? state.postList.length
+                          : state.temPostList.length,
+                      itemBuilder: (context, index) {
+                        if (state.temPostList.isNotEmpty) {
+                          final item = state.temPostList[index];
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListTile(
+                              title: Text(
+                                item.name.toString(),
                               ),
-                            );
-                          } else {
-                            final item = state.postList[index];
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: ListTile(
-                                title: Text(
-                                  item.name.toString(),
-                                ),
-                                subtitle: Text(item.body.toString()),
-                                leading: Text(item.postId.toString()),
+                              subtitle: Text(item.body.toString()),
+                              leading: Text(item.postId.toString()),
+                            ),
+                          );
+                        } else {
+                          final item = state.postList[index];
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListTile(
+                              title: Text(
+                                item.name.toString(),
                               ),
-                            );
-                          }
-                        }),
-                  ),
+                              subtitle: Text(item.body.toString()),
+                              leading: Text(item.postId.toString()),
+                            ),
+                          );
+                        }
+                      }),
                 );
 
               case PostStatus.failure:
